@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loan Request</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="/moneyveo/css/styles.css">
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+        <div class="container-item loan-selection">
+            <div class="loan__calculator amount">
+                <h3 class="loan__calculator--title">
+                    Сумма:
+                    <output title="amount"
+                            for="amount-range"
+                            class="output sum_value">
+                        14998
+                    </output>
+                    <span class="output-title">грн</span>
+                </h3>
+                <div class="loan-range">
+                    <label for="sum">
+                        <input type="range"
+                               id="sum"
+                               class="input-range input-amount"
+                               value="14998"
+                               min="50"
+                               max="30000"
+                               step="1">
+                    </label>
+                    <div class="data-input first-part">
+                        <span class="data-num">50</span>
+                        <span class="data-num">14 999</span>
+                    </div>
+                    <div class="data-input second-part">
+                        <span class="data-num">15 000</span>
+                        <span class="data-num">30 000</span>
+                    </div>
+                    <div class="gradient-range range-of-sum"></div>
+                    <div class="input-range-mask">
+                        <div class="range-mask green"></div>
+                        <div class="range-mask"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="loan__calculator term">
+                <h3 class="loan__calculator--title">
+                    Срок:
+                    <output id="time_value"
+                            title="term"
+                            for="term"
+                            class="output output-term">
+                        27
+                    </output>
+                    <span id="time_name" class="output-title">дней</span>
+                </h3>
+                <div class="loan-range">
+                    <label for="time">
+                        <input type="range"
+                               id="time"
+                               class="input-range input-term"
+                               value="27"
+                               min="1"
+                               max="65">
+                    </label>
+                    <div class="data-input first-part">
+                        <span class="data-num">l день</span>
+                        <span class="data-num">30 дней</span>
+                    </div>
+                    <div class="data-input second-part">
+                        <span class="data-num">8 недели</span>
+                        <span class="data-num">до 18 недель</span>
+                    </div>
+                    <div class="gradient-range range-of-term"></div>
+                    <div class="input-range-mask">
+                        <div class="range-mask green"></div>
+                        <div class="range-mask"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-show">
+                <p class="mobile-show__txt">
+                    При займе от 15 000 грн сроки погашения увеличиваются от 8 недель,
+                    а выплати производятся раз в две недели
+                </p>
+            </div>
+            <button type="button" class="button send-request">
+                офофрмить кредит
+                <span class="send-request__amount"></span>
+            </button>
+        </div>
+        <div class="container-item loan-amount">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <div class="calculator__loan days">
+                            <p class="calculator__loan-txt">
+                                Возврат до :
+                                <label class="date-day">
+
+                                </label>
+                            </p>
+                            <p class="calculator__loan-txt">
+                                Кредит :
+                                <output title="amount"
+                                        class="loan-val-txt sum_value">
+                                    8200.00
+                                </output>
+                            </p>
+                            <p class="calculator__loan-txt">
+                                Проценты, грн :
+                                <label>
+                                    0.70
+                                </label>
+                            </p>
+                            <hr class="dashed">
+                            <p class="calculator__loan-txt--total">Всего к возврату :
+                                <output title="amount"
+                                        class="total-pay total-pay-day"></output>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="calculator__loan weeks">
+                            <p class="calculator__loan-txt bold">
+                                Вернуть
+                                <span class="sum_value">
+                                    30 000
+                                </span> грн до <label class="date-week"> </label>
+                            </p>
+                            <p class="calculator__loan-txt">
+                                Кредит :
+                                <output title="amount"
+                                        class="loan-val-txt sum_value">
+                                    8200.00
+                                </output>
+                            </p>
+                            <p class="calculator__loan-txt">
+                                Платежей
+                                <label>
+                                    5
+                                </label>
+                            </p>
+                            <hr class="dashed">
+                            <p class="change-box__text bold">Платеж раз в 2 недели:
+                                <output title="amount"
+                                        class="total-pay total-pay-week"></output>
+                            </p>
+                            <p class="about-pay-system">
+                                При займе от 15 000 грн сроки погашения увеличиваются от 8 недель,
+                                а выплати производятся раз в две недели
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

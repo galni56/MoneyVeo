@@ -1,0 +1,407 @@
+@import url("assets.css");
+.main-txt {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+}
+.sub-txt {
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0;
+  font-weight: bold;
+}
+.tiny-txt {
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #FAFAFA;
+  font-family: 'Gilroy';
+}
+.input-range-mask {
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+  top: 0;
+  z-index: 1;
+}
+.input-range-mask .range-mask {
+  width: 49%;
+  position: absolute;
+  opacity: 0.2;
+  right: 0;
+  height: 4px;
+  background: #915FFF;
+  top: 8px;
+}
+.input-range-mask .range-mask.green {
+  background: #3DAE2B;
+  left: 0;
+  right: auto;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wrapper {
+  max-width: 890px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .container-item {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.container .container-item.loan-selection {
+  max-width: 539px;
+  padding: 25px 44px 26px 51px;
+}
+.container .container-item.loan-selection .loan__calculator--title {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  font-weight: normal;
+}
+.container .container-item.loan-selection .loan__calculator--title .output,
+.container .container-item.loan-selection .loan__calculator--title .output-title {
+  font-weight: bold;
+}
+.container .container-item.loan-selection .loan__calculator--title .output {
+  margin: 0 14px;
+  display: inline-block;
+  min-width: 71px;
+  text-align: right;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range {
+  margin: 16px 0 41px;
+  position: relative;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .input-range {
+  width: 100%;
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s time;
+  border-radius: 20px;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  border: 2px solid #3DAE2B;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .input-range::-moz-range-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  border: 2px solid #3DAE2B;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .active-week::-moz-range-thumb {
+  border-color: #915FFF;
+  transition: 0.3s;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .active-week::-webkit-slider-thumb {
+  border-color: #915FFF;
+  transition: 0.3s;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input {
+  width: 50%;
+  position: absolute;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input .data-num {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+  color: #828282;
+  position: absolute;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input .data-num:first-child {
+  left: 0;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input .data-num:last-child {
+  right: 0;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input.first-part {
+  left: 0;
+  bottom: 10px;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .data-input.second-part {
+  right: 0;
+  top: -7px;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .gradient-range {
+  height: 4px;
+  width: 48%;
+  background: linear-gradient(90deg, #3DAE2B 0%, #29999f 66%, #915FFF 100%);
+  position: absolute;
+  top: 8px;
+  overflow: hidden;
+  z-index: 8;
+}
+.container .container-item.loan-selection .loan__calculator .loan-range .gradient-range.range-of-term {
+  width: 41%;
+}
+.container .container-item.loan-selection .send-request {
+  background: linear-gradient(90deg, #915FFF 0%, #6E36EA 100%);
+  text-align: center;
+  padding: 6px;
+  border: none;
+  color: #ffffff;
+  display: block;
+  min-width: 260px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.2s;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  margin: 0 auto;
+}
+.container .container-item.loan-selection .send-request:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+.container .container-item.loan-amount {
+  max-width: 341px;
+  padding: 29px 30px;
+  height: 293px;
+  overflow: hidden;
+}
+.container .container-item.loan-amount .calculator__loan-txt {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  position: relative;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.container .container-item.loan-amount .calculator__loan-txt output,
+.container .container-item.loan-amount .calculator__loan-txt label {
+  position: absolute;
+  right: 0;
+}
+.container .container-item.loan-amount .calculator__loan-txt--total {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  font-weight: bold;
+  margin: 16px 0;
+  position: relative;
+}
+.container .container-item.loan-amount .calculator__loan-txt--total .total-pay {
+  position: absolute;
+  right: 0;
+}
+.container .container-item.loan-amount .calculator__loan .dashed {
+  border: none;
+  border-top: 2px dotted #915FFF;
+}
+.container .container-item.loan-amount .calculator__loan.weeks .bold {
+  font-weight: bold;
+}
+.container .container-item.loan-amount .calculator__loan.weeks .bold .sum_value {
+  display: inline-block;
+}
+.container .container-item.loan-amount .calculator__loan.weeks .change-box__text {
+  position: relative;
+}
+.container .container-item.loan-amount .calculator__loan.weeks .change-box__text .total-pay-week {
+  position: absolute;
+  right: 0;
+}
+.container .container-item.loan-amount .calculator__loan .about-pay-system {
+  color: #915FFF;
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+}
+.container .container-item.loan-amount .flip-container {
+  -webkit-transform: perspective(1px);
+  -moz-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  -o-transform: perspective(1px);
+  transform: perspective(1px);
+}
+.container .container-item.loan-amount .flip-container.active .flipper {
+  transform: rotateY(180deg);
+}
+.container .container-item.loan-amount .flip-container .flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.container .container-item.loan-amount .flip-container .flipper .front,
+.container .container-item.loan-amount .flip-container .flipper .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+.container .container-item.loan-amount .flip-container .flipper .front {
+  z-index: 2;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+}
+.container .container-item.loan-amount .flip-container .flipper .back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.container .mobile-show {
+  display: none;
+}
+.container .mobile-show__txt {
+  display: none;
+  color: #915FFF;
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 15px;
+}
+@media (max-width: 880px) {
+  body {
+    background-color: #ffffff;
+  }
+  .container {
+    padding: 10px 15px;
+    align-items: baseline;
+    justify-content: initial;
+    position: relative;
+  }
+  .container .container-item {
+    margin: 0 auto;
+  }
+  .container .container-item.loan-selection {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+  }
+  .container .container-item.loan-selection .loan__calculator {
+    padding: 7px 9px;
+    margin-bottom: 10px;
+    background: #FAFAFA;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+  }
+  .container .container-item.loan-selection .loan__calculator .output-title,
+  .container .container-item.loan-selection .loan__calculator .output {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    font-weight: bold;
+  }
+  .container .container-item.loan-selection .loan__calculator .loan-range {
+    margin-bottom: 0;
+  }
+  .container .container-item.loan-selection .send-request {
+    margin: auto auto 0;
+    min-width: auto;
+    max-width: 280px;
+    width: 100%;
+  }
+  .container .container-item.loan-amount {
+    max-width: 539px;
+    margin-bottom: 10px;
+    padding: 14px 14px 9px;
+    background: #FAFAFA;
+    height: 124px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+    position: relative;
+  }
+  .container .container-item.loan-amount .flip-container .flipper .front,
+  .container .container-item.loan-amount .flip-container .flipper .back {
+    background-color: #FAFAFA;
+  }
+  .container .container-item.loan-amount .calculator__loan-txt {
+    margin: 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+  }
+  .container .container-item.loan-amount .calculator__loan-txt--total {
+    margin: 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+  }
+  .container .container-item.loan-amount .about-pay-system {
+    display: none;
+  }
+  .container .container-item.loan-amount .weeks .change-box__text {
+    margin: 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .container .mobile-show {
+    display: block;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

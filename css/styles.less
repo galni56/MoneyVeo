@@ -1,0 +1,483 @@
+@import url("assets.css");
+
+@c-black: #000000;
+@c-white: #ffffff;
+@c-grey-l: #FAFAFA;
+@c-grey: #828282;
+@c-blue: #915FFF;
+@c-green: #3DAE2B;
+@c-green-blue: linear-gradient(90deg, @c-blue 0%, #6E36EA 100%);
+
+
+.main-txt {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.sub-txt {
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.tiny-txt {
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: @c-grey-l;
+  font-family: 'Gilroy';
+}
+
+.input-range-mask {
+  position: absolute;
+  width: 100%;
+  background-color: @c-white;
+  top: 0;
+  z-index: 1;
+
+  .range-mask {
+    width: 49%;
+    position: absolute;
+    opacity: 0.2;
+    right: 0;
+    height: 4px;
+    background: @c-blue;
+    top: 8px;
+
+    &.green {
+      background: @c-green;
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper {
+    max-width: 890px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .container-item {
+    width: 100%;
+    background-color: @c-white;
+    color: @c-black;
+    box-shadow: 0 20px 50px rgba(@c-black, 0.25);
+
+    &.loan-selection {
+      max-width: 539px;
+      padding: 25px 44px 26px 51px;
+
+      .loan__calculator {
+
+        &--title {
+          .main-txt;
+          font-weight: normal;
+
+          .output,
+          .output-title {
+            font-weight: bold;
+          }
+
+          .output {
+            margin: 0 14px;
+            display: inline-block;
+            min-width: 71px;
+            text-align: right;
+            font-weight: bold;
+            border-bottom: 1px solid @c-black;
+          }
+        }
+
+        .loan-range {
+          margin: 16px 0 41px;
+          position: relative;
+
+          .input-range {
+            width: 100%;
+            -webkit-appearance: none;
+            outline: none;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            transition: 0.2s time;
+            border-radius: 20px;
+            position: relative;
+            z-index: 10;
+            background-color: transparent;
+            //Input color
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              background: white;
+              border-radius: 50%;
+              cursor: pointer;
+              position: relative;
+              z-index: 20;
+              border: 2px solid @c-green;
+              box-sizing: border-box;
+              box-shadow: 0px 4px 4px rgba(@c-black, 0.25);
+            }
+
+            &::-moz-range-thumb {
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              background: white;
+              border-radius: 50%;
+              cursor: pointer;
+              position: relative;
+              z-index: 20;
+              border: 2px solid @c-green;
+              box-sizing: border-box;
+              box-shadow: 0px 4px 4px rgba(@c-black, 0.25);
+            }
+          }
+
+          .active-week::-moz-range-thumb {
+            border-color: @c-blue;
+            transition: 0.3s;
+          }
+
+          .active-week::-webkit-slider-thumb {
+            border-color: @c-blue;
+            transition: 0.3s;
+          }
+
+          .data-input {
+            width: 50%;
+            position: absolute;
+
+            .data-num {
+              font-size: 12px;
+              line-height: 14px;
+              font-weight: 300;
+              color: @c-grey;
+              position: absolute;
+
+              &:first-child {
+                left: 0;
+              }
+
+              &:last-child {
+                right: 0;
+              }
+            }
+
+            &.first-part {
+              left: 0;
+              bottom: 10px;
+
+            }
+
+            &.second-part {
+              right: 0;
+              top: -7px;
+            }
+
+          }
+
+          .gradient-range {
+            height: 4px;
+            width: 48%;
+            background: linear-gradient(90deg,
+            @c-green 0%,
+            #29999f 66%,
+            @c-blue 100%);
+            position: absolute;
+            top: 8px;
+            overflow: hidden;
+            z-index: 8;
+
+            &.range-of-term {
+              width: 41%;
+            }
+          }
+        }
+
+      }
+
+      .send-request {
+        background: @c-green-blue;
+        text-align: center;
+        padding: 6px;
+        border: none;
+        color: @c-white;
+        display: block;
+        min-width: 260px;
+        cursor: pointer;
+        transform: scale(1);
+        transition: 0.2s;
+        .main-txt;
+        margin: 0 auto;
+
+        &:hover {
+          transform: scale(1.05);
+          transition: 0.4s;
+        }
+      }
+    }
+
+    &.loan-amount {
+      max-width: 341px;
+      padding: 29px 30px;
+      height: 293px;
+      overflow: hidden;
+
+
+      .calculator__loan {
+
+        &-txt {
+          .main-txt ;
+          position: relative;
+          color: @c-black;
+          margin-bottom: 16px;
+
+          output,
+          label {
+            position: absolute;
+            right: 0;
+          }
+
+          &--total {
+            .main-txt ;
+            font-weight: bold;
+            margin: 16px 0;
+            position: relative;
+
+            .total-pay {
+              position: absolute;
+              right: 0;
+
+            }
+          }
+        }
+
+        .dashed {
+          border: none;
+          border-top: 2px dotted @c-blue;
+        }
+
+        &.weeks {
+          .bold {
+            font-weight: bold;
+
+            .sum_value {
+              display: inline-block;
+            }
+          }
+
+          .change-box__text {
+            position: relative;
+
+            .total-pay-week {
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
+
+        .about-pay-system {
+          color: @c-blue;
+          .tiny-txt;
+        }
+      }
+      //Flip - animation
+      .flip-container {
+        -webkit-transform: perspective(1px);
+        -moz-transform: perspective(1px);
+        -ms-transform: perspective(1px);
+        -o-transform: perspective(1px);
+        transform: perspective(1px);
+
+        &.active .flipper {
+          transform: rotateY(180deg);
+        }
+
+        .flipper {
+          transition: 0.6s;
+          transform-style: preserve-3d;
+          position: relative;
+
+          .front,
+          .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: @c-white;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: rotateY(0deg);
+            -moz-transition: 0.6s;
+            -moz-transform-style: preserve-3d;
+            -moz-transform: rotateY(0deg);
+            -o-transition: 0.6s;
+            -o-transform-style: preserve-3d;
+            -o-transform: rotateY(0deg);
+            -ms-transition: 0.6s;
+            -ms-transform-style: preserve-3d;
+            -ms-transform: rotateY(0deg);
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+          }
+
+          .front {
+            z-index: 2;
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+
+          }
+
+          .back {
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .mobile-show {
+    display: none;
+
+    &__txt {
+      display: none;
+      color: @c-blue;
+      .tiny-txt;
+      margin-top: 15px;
+    }
+  }
+
+}
+
+
+@media (max-width: 880px) {
+  body {
+    background-color: @c-white;
+  }
+
+  .container {
+    padding: 10px 15px;
+    align-items: baseline;
+    justify-content: initial;
+    position: relative;
+
+    .container-item {
+      margin: 0 auto;
+
+      &.loan-selection {
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+
+        .loan__calculator {
+          padding: 7px 9px;
+          margin-bottom: 10px;
+          background: @c-grey-l;
+          box-shadow: 0 0 14px rgba(@c-black, 0.15);
+
+          .output-title,
+          .output {
+            .sub-txt;
+          }
+
+          .loan-range {
+            margin-bottom: 0;
+          }
+        }
+
+        .send-request {
+          margin: auto auto 0;
+          min-width: auto;
+          max-width: 280px;
+          width: 100%;
+        }
+      }
+
+      &.loan-amount {
+        max-width: 539px;
+        margin-bottom: 10px;
+        padding: 14px 14px 9px;
+        background: @c-grey-l;
+        height: 124px;
+        box-shadow: 0 0 14px rgba(@c-black, 0.15);
+        position: relative;
+
+        .flip-container {
+          .flipper {
+            .front,
+            .back {
+              background-color: @c-grey-l;
+            }
+          }
+        }
+
+        .calculator__loan-txt {
+          .tiny-txt;
+          margin-bottom: 10px;
+
+          &--total {
+            .tiny-txt;
+            font-weight: bold;
+          }
+        }
+
+        .about-pay-system {
+          display: none;
+        }
+
+        .weeks {
+          .change-box__text {
+            .tiny-txt;
+          }
+        }
+      }
+    }
+
+    .mobile-show {
+      display: block;
+    }
+  }
+}
